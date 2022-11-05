@@ -1,7 +1,9 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
@@ -15,6 +17,7 @@ module.exports = {
                 viewport: "width=device-width, initial-scale=1.0"
             }
         }),
+        new CleanWebpackPlugin(),
     ],
     module: {
         rules: [

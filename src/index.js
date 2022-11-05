@@ -1,3 +1,4 @@
+/*
 import _ from 'lodash';
 import './style.scss';
 import Icon from './png-icon.png';
@@ -16,3 +17,10 @@ import Icon from './png-icon.png';
  }
 
  document.body.appendChild(component());
+ */
+
+ import './style.scss';
+ const h1 = document.createElement('h1');
+ h1.classList.add('red');
+ h1.innerText = "Webpack hello";
+ document.body.append(h1);
