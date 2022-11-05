@@ -8,14 +8,10 @@ module.exports = {
     },
     module: {
         rules: [
-          {
+          /*{
             test: /\.css$/i,
             use: ['style-loader', 'css-loader'],
-          },
-          /*{
-            test: /\.s[ac]ss$/i,
-            use: ['sass-loader'],
-          },
+          },*/
           {
             test: /\.s[ac]ss$/i,
             use: [
@@ -23,7 +19,11 @@ module.exports = {
               "css-loader",
               "sass-loader",
             ],
-          },*/
+          },
+          {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+          },
         ],
       },
 };
