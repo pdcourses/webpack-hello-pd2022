@@ -1,7 +1,5 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-//const CleanWebpackPlugin = require('clean-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const plugins = require('./webpack.config/plugins');
 
 module.exports = {
     mode: 'development',
@@ -10,17 +8,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'build'),
     },
-    plugins: [
-        new HTMLWebpackPlugin({
-            title: '',
-            template: './src/index.html',
-            meta: {
-                viewport: "width=device-width, initial-scale=1.0"
-            }
-        }),
-        //new CleanWebpackPlugin(),
-        new WebpackManifestPlugin(),
-    ],
+    plugins,
     module: {
         rules: [
           /*{
