@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+//const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 module.exports = {
     mode: 'development',
@@ -17,7 +18,8 @@ module.exports = {
                 viewport: "width=device-width, initial-scale=1.0"
             }
         }),
-        new CleanWebpackPlugin(),
+        //new CleanWebpackPlugin(),
+        new WebpackManifestPlugin(),
     ],
     module: {
         rules: [
