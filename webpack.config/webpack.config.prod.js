@@ -1,8 +1,10 @@
 const path = require('path');
 //const plugins = require('./plugins');
 // MiniCssExtractPlugin
+const merge = require('webpack-merge');
+const commonConfig = require('./webpack.config.js');
 
-const config = {
+const config = merge(commonConfig, {
     mode: 'production',
     module: {
         rules: [
@@ -16,5 +18,5 @@ const config = {
               },
         ],
       },
-};
+});
 module.exports = config;
